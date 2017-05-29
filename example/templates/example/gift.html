@@ -1,7 +1,6 @@
 {% extends 'example/index.html' %}
 
 {% block content %}
-<div class="container">
     <div class="panel panel-primary">
         <div class="panel-heading">
             List of Gifts {{ gfl_gifts|length }}
@@ -21,5 +20,10 @@
             </ul>
         </div>
     </div>
-</div>
+
+    <div class="pull-left">
+        <a href="{% url 'list_gfl' %}" class="btn btn-default btn-xs">
+            <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Back
+        </a>
+    </div>
 {% endblock %}

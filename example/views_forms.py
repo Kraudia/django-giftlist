@@ -7,7 +7,7 @@ from example.forms import GiftListForm
 class PostEditView(UpdateView):
     model = GiftList
     form_class = GiftListForm
-    success_url = '/gift_list/add'
+    success_url = '/gift_list'
     template_name = 'example/add.html'
 
     @property

@@ -1,7 +1,27 @@
- <form method="post">
+{% extends 'example/index.html' %}
+
+{% block content %}
+<form method="post">
      {% csrf_token %}
-    <p>
-        Are you sure you want to delete: {{ object }}?
-    </p>
-    <input type="submit" value="Confirm" />
+
+    <div class="alert alert-danger" role="alert">
+        <div class="row">
+            <div class="col-xs-8 col-sm-9 col-md-10">
+                 Are you sure you want to delete: <strong>{{ object }}</strong>?
+            </div>
+
+            <div class="col-xs-4 col-sm-3 col-md-2">
+                 <button class="btn btn-danger btn-block btn-xs">
+                    <span type="submit" class="glyphicon glyphicon-trash"></span> Confirm
+                </button>
+            </div>
+        </div>
+    </div>
 </form>
+
+<div class="pull-left">
+    <a href="{% url 'list_gfl' %}" class="btn btn-default btn-xs">
+        <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Back
+    </a>
+</div>
+{% endblock %}
